@@ -44,6 +44,8 @@ Don't forget to like, subscribe, and hit the notification bell to stay updated w
 - [Youtube Video Part-9: Genres Tab UI, and Audio Player UI](https://youtu.be/fy3Ocf9Q4WI)
 - [Youtube Video Part-10:Driver Mode UI & Play Playlists UI](https://youtu.be/Pp3IiIVNDbg)
 
+- [Youtube Video Part-11: Just Audio Player with Background Audio Service Configuration](https://youtu.be/4rOObNYK9oI)
+
 
 UI UX App Design by: [Akila Weerakoon](https://www.behance.net/gallery/108639283/Meal-Monkey-Food-delivery-iOS-mobile-application)
 

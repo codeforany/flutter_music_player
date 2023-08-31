@@ -69,6 +69,7 @@ class PageManager {
     listenToCurrentPosition();
     listenToBufferedPosition();
     listenToTotalPosition();
+    listenToChangesInSong();
   }
 
   void listenToChangeInPlaylist() {
@@ -99,7 +100,7 @@ class PageManager {
     audioHandler.playbackState.listen((playbackState) {
       final isPlaying = playbackState.playing;
       final processingState = playbackState.processingState;
-
+      playbackStatNotifier.value = processingState;
       if (processingState == AudioProcessingState.loading ||
           processingState == AudioProcessingState.buffering) {
         playButtonNotifier.value = ButtonState.loading;

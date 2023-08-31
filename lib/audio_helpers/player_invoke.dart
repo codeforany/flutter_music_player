@@ -15,7 +15,10 @@ Timer? debounce;
 
 void playerPlayProcessDebounce(List songsList, int index) {
   debounce?.cancel();
-  debounce = Timer(const Duration(milliseconds: 600), () {});
+  debounce = Timer(const Duration(milliseconds: 600), () {
+      PlayerInvoke.init(songsList: songsList, index: index);
+
+  });
 }
 
 class PlayerInvoke {

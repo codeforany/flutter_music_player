@@ -180,7 +180,7 @@ class MyAudioHandler extends BaseAudioHandler implements AudioPlayerHandler {
 
   @override
   Future<void> seek(Duration position) async {
-    await player.seek(position);
+    player.seek(position);
   }
 
   @override
@@ -194,12 +194,12 @@ class MyAudioHandler extends BaseAudioHandler implements AudioPlayerHandler {
 
   @override
   Future<void> skipToNext() async {
-    await player.seekToNext();
+     player.seekToNext();
   }
 
   @override
   Future<void> skipToPrevious() async {
-    await player.seekToPrevious();
+     player.seekToPrevious();
   }
 
   @override

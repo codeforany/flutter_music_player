@@ -38,6 +38,10 @@ dependencies:
   get: ^4.6.5
   flutter_rating_bar: ^4.0.1
   sleek_circular_slider: ^2.0.1
+  audio_service: ^0.18.11
+  just_audio: ^0.9.34
+  get_it: ^7.6.0
+  cached_network_image: ^3.2.3
 
 dev_dependencies:
   flutter_test:

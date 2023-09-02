@@ -67,8 +67,10 @@ class _MainPlayerViewState extends State<MainPlayerView> {
                 ),
                 padding: EdgeInsets.zero,
                 onSelected: (selectIndex) {
-                  if (selectIndex == 9) {
-                    Get.to(() => const DriverModeView());
+                  if (selectIndex == 2) {
+                    openPlayPlaylistQueue();
+                  } else if (selectIndex == 9) {
+                    openDriverModel();
                   }
                 },
                 itemBuilder: (context) {
@@ -383,6 +385,7 @@ class _MainPlayerViewState extends State<MainPlayerView> {
                               width: 75,
                               height: 75,
                               child: Stack(
+                                alignment: Alignment.center,
                                 children: [
                                   if (value == ButtonState.loading)
                                     SizedBox(
@@ -450,7 +453,7 @@ class _MainPlayerViewState extends State<MainPlayerView> {
                             title: "Playlist",
                             icon: "assets/img/playlist.png",
                             onPressed: () {
-                              Get.to(() => const PlayPlayListView());
+                              openPlayPlaylistQueue();
                             }),
                         PlayerBottomButton(
                             title: "Shuffle",
@@ -476,6 +479,25 @@ class _MainPlayerViewState extends State<MainPlayerView> {
             );
           },
         ),
+      ),
+    );
+  }
+
+  void openPlayPlaylistQueue(){
+Navigator.push(
+      context,
+      PageRouteBuilder(
+        opaque: false,
+        pageBuilder: (_, ___, __) => const PlayPlayListView(),
+      ),
+    );
+  }
+  void openDriverModel(){
+      Navigator.push(
+      context,
+      PageRouteBuilder(
+        opaque: false,
+        pageBuilder: (_, ___, __) => const DriverModeView(),
       ),
     );
   }

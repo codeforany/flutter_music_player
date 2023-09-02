@@ -1,15 +1,17 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import '../common/color_extension.dart';
 
 class AllSongRow extends StatelessWidget {
   final Map sObj;
+  final bool isWeb;
   final VoidCallback onPressedPlay;
   final VoidCallback onPressed;
   const AllSongRow({
     super.key,
     required this.sObj,
     required this.onPressed,
-    required this.onPressedPlay,
+    required this.onPressedPlay, this.isWeb = false,
   });
 
   @override
@@ -24,7 +26,27 @@ class AllSongRow extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(25),
-                  child: Image.asset(
+                  child: isWeb ? 
+                    CachedNetworkImage(
+                          imageUrl: sObj["image"].toString(),
+                          fit: BoxFit.cover,
+                          errorWidget: (context, url, error) {
+                            return Image.asset(
+                              "assets/img/cover.jpg",
+                              fit: BoxFit.cover,
+                            );
+                          },
+                          placeholder: (context, url) {
+                            return Image.asset(
+                              "assets/img/cover.jpg",
+                              fit: BoxFit.cover,
+                            );
+                          },
+                           width: 50,
+                          height: 50,
+                        )
+                  
+                   : Image.asset(
                     sObj["image"],
                     width: 50,
                     height: 50,
